@@ -15,13 +15,8 @@ jobs:
         run: npm ci
       - name: Run tests
         run: npm run test
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: dist
-          path: |
-            dist
-            package.json
+
+
   build:
     needs: test
     runs-on: ubuntu-latest
@@ -37,9 +32,9 @@ jobs:
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: dist
+          name: dist-files
           path: |
-            dist-files
+            dist
   deploy:
     needs: build
     runs-on: ubuntu-latest
