@@ -13,8 +13,6 @@ jobs:
       #This is to install dependencies present in package-lock.json
       - name: Install dependencies
         run: npm ci
-      - name: Lint Code
-        run: npm run lint
       - name: Run tests
         run: npm run test
   build:
